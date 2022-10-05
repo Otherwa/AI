@@ -1,6 +1,7 @@
 import os
 import time
 
+# First block empty noob
 board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 player = 1
 
@@ -69,10 +70,10 @@ def CheckWin():
 
 print("Tic-Tac-Toe Game")
 print("Player 1 [X] --- Player 2 [O]\n")
-print()
-print()
+
 print("Please Wait...")
 time.sleep(1)
+
 while (Game == Running):
     os.system('cls')
     DrawBoard()

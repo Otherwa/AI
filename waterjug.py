@@ -1,15 +1,10 @@
 # 3 water jugs capacity -> (x,y,z) where x>y>z
 # initial state (12,0,0)
 # final state (6,6,0)
-capacity = (12, 8, 5)
-
-# Pattern discovered
-
 # Maximum capacities of 3 jugs -> x,y,z
-x = capacity[0]
-y = capacity[1]
-z = capacity[2]
-
+x = 12
+y = 8
+z = 5
 # to mark visited states
 memory = {}
 # store solution path
@@ -29,8 +24,8 @@ def get_all_states(state):
     if ((a, b, c) in memory):
         return False
     memory[(a, b, c)] = 1
-    # empty jug a
 
+    # empty jug a
     if (a > 0):
         # empty a into b
         if (a + b <= y):
@@ -46,15 +41,15 @@ def get_all_states(state):
         if (get_all_states((0, b, a+c))):
             ans.append(state)
             return True
-        else:
-            if (get_all_states((a - (z-c), b, z))):
-                ans.append(state)
-                return True
+    else:
+        if (get_all_states((a - (z-c), b, z))):
+            ans.append(state)
+            return True
 
     # empty jug b
     if (b > 0):
         # empty b into a
-        if (a + b <= x):
+        if (b + a <= x):
             if (get_all_states((a + b, 0, c))):
                 ans.append(state)
                 return True
