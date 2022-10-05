@@ -23,10 +23,13 @@ class State():
         else:
             return False
 
-<<<<<<< HEAD
 
-=======
->>>>>>> f47985fa31e243a91face31cc7a1be607ba0dd65
+<< << << < HEAD
+
+== == == =
+>>>>>> > f47985fa31e243a91face31cc7a1be607ba0dd65
+
+
 def successors(cur_state):
     children = []
     if cur_state.boat == 'left':
