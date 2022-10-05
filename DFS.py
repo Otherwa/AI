@@ -12,7 +12,7 @@ def dfs(graph, start):
     while stack:
         vertex = stack.pop()
         if vertex not in visited:
-            visited.add(vertex)
+            visited.extend(vertex)
             stack.extend(graph[vertex] - set(visited))
     return visited
 
@@ -32,5 +32,5 @@ def dfs_paths(graph, start, goal):
 
 
 # [['A', 'C', 'F'], ['A', 'B', 'E', 'F']]
-l1 = list(dfs_paths(graph, 'A', 'E'))
-print(l1)
+# l1 = list(dfs_paths(graph, 'A', 'E'))
+# print(l1)
