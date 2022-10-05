@@ -18,13 +18,11 @@ Mark = 'X'
 
 
 def DrawBoard():
-    print(" %c | %c | %c " % (board[1], board[2], board[3]))
-    print("___|___|___")
-    print(" %c | %c | %c " % (board[4], board[5], board[6]))
-    print("___|___|___")
-    print(" %c | %c | %c " % (board[7], board[8], board[9]))
-    print("   |   | ")
-
+    print(f'{board[1]} | {board[2]} | {board[3]}')
+    print('- - - - -')
+    print(f'{board[4]} | {board[5]} | {board[6]}')
+    print('- - - - - ')
+    print(f'{board[7]} | {board[8]} | {board[9]}')
 # This Function Checks position is empty or not
 
 

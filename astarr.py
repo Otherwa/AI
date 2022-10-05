@@ -1,3 +1,4 @@
+from os import stat
 from simpleai.search import *
 
 # goal

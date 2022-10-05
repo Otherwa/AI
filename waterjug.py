@@ -1,13 +1,9 @@
-# 3 water jugs capacity -> (x,y,z) where x>y>z
-# initial state (12,0,0)
-# final state (6,6,0)
-# Maximum capacities of 3 jugs -> x,y,z
+
 x = 12
 y = 8
 z = 5
-# to mark visited states
+
 memory = {}
-# store solution path
 ans = []
 
 
@@ -37,14 +33,14 @@ def get_all_states(state):
                 ans.append(state)
                 return True
     # empty a into c
-    if (a + c <= z):
-        if (get_all_states((0, b, a+c))):
-            ans.append(state)
-            return True
-    else:
-        if (get_all_states((a - (z-c), b, z))):
-            ans.append(state)
-            return True
+        if (a + c <= z):
+            if (get_all_states((0, b, a+c))):
+                ans.append(state)
+                return True
+        else:
+            if (get_all_states((a - (z-c), b, z))):
+                ans.append(state)
+                return True
 
     # empty jug b
     if (b > 0):
@@ -58,14 +54,14 @@ def get_all_states(state):
                 ans.append(state)
                 return True
     # empty b into c
-    if (b + c <= z):
-        if (get_all_states((a, 0, b + c))):
-            ans.append(state)
-            return True
-    else:
-        if (get_all_states((a, b - (z-c), z))):
-            ans.append(state)
-            return True
+        if (b + c <= z):
+            if (get_all_states((a, 0, b + c))):
+                ans.append(state)
+                return True
+        else:
+            if (get_all_states((a, b - (z-c), z))):
+                ans.append(state)
+                return True
 
     # empty jug c
     if (c > 0):
@@ -79,14 +75,15 @@ def get_all_states(state):
                 ans.append(state)
                 return True
     # empty c into b
-    if (b + c <= y):
-        if (get_all_states((a, b + c, 0))):
-            ans.append(state)
-            return True
-    else:
-        if (get_all_states((a, y, c - (y - b)))):
-            ans.append(state)
-            return True
+        if (b + c <= y):
+            if (get_all_states((a, b + c, 0))):
+                ans.append(state)
+                return True
+        else:
+            if (get_all_states((a, y, c - (y - b)))):
+                ans.append(state)
+                return True
+
     return False
 
 
